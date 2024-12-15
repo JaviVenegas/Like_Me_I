@@ -6,10 +6,11 @@ const obtenerPost = async () => {
         const { rows } = await DB.query("SELECT * FROM posts");
         return rows; 
     } catch (err) {
-        console.error("Error retrieving posts:", err);
+        console.error("Error obteniendo posts:", err);
         throw err; 
     }
 }
+
 
 //funcion para crearPost 
 
@@ -21,7 +22,7 @@ const crearPost = async (titulo, img, descripcion, likes) => {
         const { rowCount, rows } = await DB.query(SQLQuery, SQLValues); 
         return { rowCount, rows }; 
     } catch (err) {
-        console.error("Error creating post:", err);
+        console.error("Error creando post:", err);
         throw err; 
     }
 }
