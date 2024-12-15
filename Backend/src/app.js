@@ -4,7 +4,6 @@ const cors = require ("cors");
 const morgan = require('morgan');
 
 
-
 //Importacion de rutas 
 const APIRoutes = require ('./routes/routes');
 

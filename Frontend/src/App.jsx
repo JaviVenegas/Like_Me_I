@@ -13,7 +13,7 @@ function App() {
 
   const getPosts = async () => {
     const { data: posts } = await axios.get(urlBaseServer + "/posts");
-    setPosts([...posts]);
+    setPosts(posts.data.rows);
   };
 
   const agregarPost = async () => {
@@ -25,6 +25,7 @@ function App() {
   // este método se utilizará en el siguiente desafío
   const like = async (id) => {
     await axios.put(urlBaseServer + `/posts/like/${id}`);
+    
     getPosts();
   };
 
